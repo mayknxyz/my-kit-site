@@ -8,11 +8,19 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'my-kit',
+			components: {
+				SocialIcons: './src/components/SocialIcons.astro',
+			},
 			social: [
 				{
 					icon: 'github',
 					label: 'GitHub',
 					href: 'https://github.com/mayknxyz/my-kit',
+				},
+				{
+					icon: 'external',
+					label: 'mikenavales.xyz',
+					href: 'https://mikenavales.xyz',
 				},
 			],
 			editLink: {

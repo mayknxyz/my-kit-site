@@ -5,19 +5,29 @@ template: splash
 hero:
   tagline: A spec-driven development toolkit for Claude Code — ship faster with structured workflows, domain skills, and automated audits.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/my-backpack-logo.png
   actions:
-    - text: Get Started
+    - text: Getting Started
       link: /getting-started/
-      icon: right-arrow
       variant: primary
-    - text: View on GitHub
-      link: https://github.com/mayknxyz/my-kit
-      icon: external
+    - text: there's more in my-backpack >>>
+      link: https://mybackpack.mikenavales.xyz
       variant: minimal
+      attrs:
+        target: _blank
+        rel: noopener
+        class: backpack-link
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<style is:global>{`
+  .backpack-link {
+    color: var(--sl-color-text-accent) !important;
+    border-color: var(--sl-color-text-accent) !important;
+    padding-inline: 1.5rem !important;
+  }
+`}</style>
 
 ## What is my-kit?
 
