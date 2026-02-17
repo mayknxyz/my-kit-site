@@ -1,0 +1,38 @@
+---
+title: Audit Commands
+description: Commands for running automated quality gates.
+sidebar:
+  order: 4
+---
+
+## `/mykit.audit.all`
+
+Run all 5 audit agents against your changes.
+
+```bash
+/mykit.audit.all
+```
+
+## Individual Audit Commands
+
+### `/mykit.audit.security`
+
+Check for vulnerabilities, exposed secrets, and injection risks.
+
+### `/mykit.audit.accessibility`
+
+Review WCAG compliance, ARIA usage, and semantic HTML.
+
+### `/mykit.audit.performance`
+
+Analyze bundle size, rendering performance, and lazy loading.
+
+### `/mykit.audit.code-quality`
+
+Evaluate code patterns, complexity, and test coverage.
+
+### `/mykit.audit.spec`
+
+Verify the implementation matches the specification.
+
+See [Workflow: Audit](/workflow/audit/) for details on what each agent checks.

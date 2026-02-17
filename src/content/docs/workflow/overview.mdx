@@ -1,0 +1,25 @@
+---
+title: Workflow Overview
+description: The spec-driven development pipeline at the heart of my-kit.
+---
+
+## The Pipeline
+
+my-kit structures development into a repeatable pipeline:
+
+**Specify → Plan → Tasks → Implement → Ship → Audit**
+
+Each stage has a dedicated command and produces artifacts that feed the next stage. This keeps work focused, traceable, and auditable.
+
+### Stages
+
+1. **Specify** — Define what you're building with `/mykit.specify`
+2. **Plan** — Generate an implementation plan with `/mykit.plan`
+3. **Tasks** — Break the plan into trackable tasks with `/mykit.tasks`
+4. **Implement** — Execute tasks with `/mykit.implement`
+5. **Ship** — Commit, PR, and release with `/mykit.commit`, `/mykit.pr`, `/mykit.release`
+6. **Audit** — Run quality gates with `/mykit.audit.all`
+
+### Why Spec-Driven?
+
+Starting with a spec ensures Claude understands the full scope before writing code. This prevents scope creep, missed requirements, and aimless implementation.

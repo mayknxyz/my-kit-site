@@ -1,0 +1,42 @@
+---
+title: Workflow Issues
+description: Troubleshooting workflow commands, spec parsing, and audit failures.
+---
+
+## Spec Not Found
+
+If `/mykit.plan` says it can't find a spec, ensure you've run `/mykit.specify` first in the current project.
+
+**Fix:** Run `/mykit.specify` to create a spec, then try again.
+
+## Plan Won't Generate
+
+If `/mykit.plan` fails to produce a plan, the spec may be too vague or missing required sections.
+
+**Fix:** Re-run `/mykit.specify` and ensure all sections (context, requirements, acceptance criteria) are filled in.
+
+## Tasks Not Tracking
+
+If tasks aren't being tracked or updated, the task list may not have been initialized.
+
+**Fix:** Run `/mykit.tasks` to regenerate the task list from the current plan.
+
+## Audit Agent Failures
+
+If an audit agent crashes or produces no output, it may be hitting context limits on very large changesets.
+
+**Fix:**
+1. Try running individual audits instead of `/mykit.audit.all`
+2. Reduce the scope of changes being audited
+3. Ensure you're on the latest version of my-kit (`cd ~/.my-kit && git pull`)
+
+## GitHub CLI Not Authenticated
+
+Ship commands (`/mykit.commit`, `/mykit.pr`, `/mykit.release`) require `gh` to be authenticated.
+
+**Fix:**
+
+```bash
+gh auth status    # Check current auth
+gh auth login     # Authenticate if needed
+```

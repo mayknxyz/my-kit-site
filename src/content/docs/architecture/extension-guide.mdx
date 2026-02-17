@@ -1,0 +1,52 @@
+---
+title: Extension Guide
+description: How to create custom commands and domain skills for my-kit.
+---
+
+## Creating Custom Skills
+
+my-kit's skill system is extensible. You can add domain skills for any framework or tool.
+
+### Skill File Structure
+
+A domain skill is a markdown file that teaches Claude about a technology:
+
+```markdown
+# [Technology] Skill
+
+## Conventions
+- File naming patterns
+- Project structure expectations
+- Code style preferences
+
+## Patterns
+- Common implementation patterns
+- Anti-patterns to avoid
+
+## Integration
+- How this technology integrates with the rest of the stack
+```
+
+### Adding a Skill
+
+1. Create a markdown file in `~/.my-kit/.claude/skills/domain/`
+2. Re-stow: `cd ~/.my-kit && stow -t ~ .`
+3. Run `/mykit.sync` in your project
+
+## Creating Custom Commands
+
+Commands are markdown files that define slash command behavior.
+
+### Command File Structure
+
+```markdown
+# /mykit.your-command
+
+[Instructions for Claude on what this command should do]
+```
+
+### Adding a Command
+
+1. Create a markdown file in `~/.my-kit/.claude/commands/`
+2. Name it `mykit.your-command.md`
+3. Re-stow: `cd ~/.my-kit && stow -t ~ .`

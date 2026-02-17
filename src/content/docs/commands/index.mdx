@@ -1,0 +1,25 @@
+---
+title: Commands Overview
+description: All 29 my-kit commands organized by category.
+---
+
+my-kit provides 29 commands, all prefixed with `/mykit.`. They're organized into these categories:
+
+| Category | Commands | Purpose |
+|----------|----------|---------|
+| [Setup](/commands/setup/) | `init`, `sync` | Initialize and sync project config |
+| [Development](/commands/development/) | `specify`, `plan`, `tasks`, `implement` | Spec-driven workflow |
+| [Ship & Release](/commands/ship-and-release/) | `commit`, `pr`, `release`, `approve`, `bypass` | Get code merged and released |
+| [Audit](/commands/audit/) | `audit.all`, `audit.security`, `audit.accessibility`, `audit.performance`, `audit.code-quality`, `audit.spec` | Quality gates |
+| [Issues](/commands/issues/) | `issue.create`, `issue.edit`, `issue.view`, `issue.list`, `label.sync` | GitHub issue management |
+| [Utilities](/commands/utilities/) | `status`, `help`, `log`, `review.*` | Helpers and code review |
+
+## Usage
+
+All commands are invoked as slash commands in Claude Code:
+
+```bash
+/mykit.init
+/mykit.specify
+/mykit.commit
+```

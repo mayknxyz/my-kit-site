@@ -1,0 +1,27 @@
+---
+title: Supported Stack
+description: Languages, frameworks, and tools that my-kit has domain skills for.
+---
+
+## Stack Compatibility
+
+my-kit works with any project that uses Claude Code, but provides **domain skills** — deep framework knowledge — for the following:
+
+| Category | Technology | Skill |
+|----------|-----------|-------|
+| Frontend | Astro | `astro` |
+| Frontend | Svelte / SvelteKit | `svelte` |
+| Styling | Tailwind CSS | `tailwind` |
+| Language | TypeScript | `typescript` |
+| Hosting | Cloudflare (Pages, Workers, D1) | `cloudflare` |
+| Testing | Vitest, Playwright | `testing` |
+
+## How Domain Skills Work
+
+When you run `/mykit.init`, my-kit detects your project's stack and activates the relevant domain skills. These skills give Claude deep knowledge of framework conventions, best practices, and common patterns.
+
+Domain skills are loaded as CLAUDE.md instructions — they don't install dependencies or modify your code. They simply teach Claude how to work effectively with your stack.
+
+## Adding More Skills
+
+my-kit's skill system is extensible. See the [Extension Guide](/architecture/extension-guide/) for how to create custom domain skills for your stack.

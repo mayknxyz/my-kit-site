@@ -1,0 +1,22 @@
+---
+title: Architecture Overview
+description: How my-kit is structured and how its components fit together.
+---
+
+## High-Level Architecture
+
+my-kit is a collection of Claude Code commands, skills, and audit agents, distributed via GNU Stow symlinks.
+
+### Components
+
+- **Commands** (`~/.claude/commands/mykit.*.md`) — Slash commands that users invoke directly
+- **Skills** (`~/.claude/skills/`) — CLAUDE.md instructions that teach Claude domain knowledge
+- **Audit Agents** — Specialized prompts that review code for quality, security, and compliance
+
+### How It Works
+
+1. **Stow** creates symlinks from `~/.my-kit/` into `~/.claude/`
+2. Claude Code discovers commands and skills via its standard paths
+3. Commands orchestrate workflows; skills provide context; agents audit results
+
+See [Stow Layout](/architecture/stow-layout/) for the full directory structure.

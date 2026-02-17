@@ -1,0 +1,38 @@
+---
+title: Stow Layout
+description: How my-kit uses GNU Stow to distribute commands and skills.
+---
+
+## Directory Structure
+
+my-kit uses GNU Stow to create symlinks from the cloned repository into Claude Code's discovery paths.
+
+### Source Layout (`~/.my-kit/`)
+
+```
+~/.my-kit/
+├── .claude/
+│   ├── commands/
+│   │   ├── mykit.init.md
+│   │   ├── mykit.specify.md
+│   │   ├── mykit.plan.md
+│   │   └── ... (29 commands)
+│   └── skills/
+│       ├── workflow/
+│       └── domain/
+└── .stow-local-ignore
+```
+
+### Symlink Targets
+
+After `stow -t ~ .`, symlinks point from:
+- `~/.claude/commands/mykit.*.md` → `~/.my-kit/.claude/commands/mykit.*.md`
+- `~/.claude/skills/*` → `~/.my-kit/.claude/skills/*`
+
+### Why Stow?
+
+Stow provides a clean way to manage dotfiles and tool extensions:
+- No PATH modifications needed
+- Easy install/uninstall (`stow` / `stow -D`)
+- Git-tracked source of truth
+- No build step required

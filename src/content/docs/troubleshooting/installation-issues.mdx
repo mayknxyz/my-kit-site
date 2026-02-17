@@ -1,0 +1,51 @@
+---
+title: Installation Issues
+description: Troubleshooting stow conflicts, missing dependencies, and permission errors.
+---
+
+## Stow Reports Conflicts
+
+If `stow -t ~ .` reports conflicts, another file already exists at the symlink target.
+
+**Fix:** Check what's at the conflicting path and either remove it or back it up:
+
+```bash
+ls -la ~/.claude/commands/mykit.init.md
+```
+
+If it's a real file (not a symlink), move it aside before stowing.
+
+## Commands Not Found After Install
+
+Claude Code may need to be restarted to discover new commands.
+
+**Fix:**
+1. Restart Claude Code
+2. Run `/mykit.status` to verify commands are detected
+
+## Permission Errors
+
+If you get permission errors during install, the `~/.my-kit` directory may be owned by root.
+
+**Fix:**
+
+```bash
+sudo chown -R $(whoami) ~/.my-kit
+```
+
+## GNU Stow Not Installed
+
+**macOS:**
+```bash
+brew install stow
+```
+
+**Linux (Debian/Ubuntu):**
+```bash
+sudo apt install stow
+```
+
+**Linux (Arch):**
+```bash
+sudo pacman -S stow
+```

@@ -1,0 +1,61 @@
+---
+title: Getting Started
+description: Get up and running with my-kit in under 5 minutes.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+## Prerequisites
+
+- **Claude Code** — [Install Claude Code](https://docs.anthropic.com/en/docs/claude-code) if you haven't already
+- **Git** — Version control (required for stow-based installation)
+- **GitHub CLI (`gh`)** — Used by shipping commands (`commit`, `pr`, `release`)
+- **Bun or Node.js** — For JavaScript/TypeScript projects
+
+## Quick Install
+
+<Steps>
+
+1. **Clone and stow my-kit:**
+
+   ```bash
+   git clone https://github.com/mayknxyz/my-kit.git ~/.my-kit
+   cd ~/.my-kit && stow -t ~ .
+   ```
+
+2. **Initialize in your project:**
+
+   ```bash
+   cd your-project
+   /mykit.init
+   ```
+
+3. **Run your first workflow:**
+
+   ```bash
+   /mykit.specify
+   ```
+
+</Steps>
+
+<Aside type="tip">
+  See the [Installation guide](/installation/) for detailed setup, upgrade, and uninstall instructions.
+</Aside>
+
+## Your First Workflow
+
+my-kit follows a spec-driven pipeline: **Specify → Plan → Tasks → Implement → Ship → Audit**.
+
+1. **`/mykit.specify`** — Describe what you want to build. my-kit creates a structured spec.
+2. **`/mykit.plan`** — Claude generates an implementation plan from the spec.
+3. **`/mykit.tasks`** — The plan is broken into trackable tasks.
+4. **`/mykit.implement`** — Claude works through each task, writing code.
+5. **`/mykit.commit`** — Stage and commit with conventional commit messages.
+6. **`/mykit.pr`** — Create a pull request with auto-generated summary.
+
+## What's Next?
+
+- [Installation](/installation/) — Detailed setup, verify, upgrade, and uninstall
+- [Workflow Overview](/workflow/overview/) — Understand the full pipeline
+- [Commands](/commands/) — Browse all 29 commands
+- [Supported Stack](/supported-stack/) — Check compatibility with your tools

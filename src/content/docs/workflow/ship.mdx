@@ -1,0 +1,37 @@
+---
+title: Ship
+description: Commit, create pull requests, and publish releases.
+---
+
+## Ship Commands
+
+The shipping stage has three commands that handle the journey from local changes to published release.
+
+### `/mykit.commit`
+
+Stages changes and creates a conventional commit with an auto-generated message.
+
+```bash
+/mykit.commit
+```
+
+### `/mykit.pr`
+
+Creates a pull request with an auto-generated title and description based on the commits.
+
+```bash
+/mykit.pr
+```
+
+### `/mykit.release`
+
+Publishes a new release with changelog generation.
+
+```bash
+/mykit.release
+```
+
+### Related Commands
+
+- `/mykit.approve` — Approve a pull request
+- `/mykit.bypass` — Bypass branch protections (use with caution)

@@ -1,0 +1,34 @@
+---
+title: Audit
+description: Automated quality gates that review your work before shipping.
+---
+
+## `/mykit.audit.all`
+
+The audit command runs all 5 audit agents against your changes:
+
+| Agent | What It Checks |
+|-------|---------------|
+| Security | Vulnerabilities, secrets, injection risks |
+| Accessibility | WCAG compliance, ARIA usage, semantic HTML |
+| Performance | Bundle size, rendering, lazy loading |
+| Code Quality | Patterns, complexity, test coverage |
+| Spec Compliance | Does the implementation match the spec? |
+
+### Usage
+
+```bash
+/mykit.audit.all
+```
+
+### Individual Audits
+
+You can also run audits individually:
+
+```bash
+/mykit.audit.security
+/mykit.audit.accessibility
+/mykit.audit.performance
+/mykit.audit.code-quality
+/mykit.audit.spec
+```

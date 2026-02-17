@@ -1,0 +1,83 @@
+---
+title: Installation
+description: Detailed installation, verification, upgrade, and uninstall instructions for my-kit.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+## Prerequisites
+
+Before installing my-kit, ensure you have:
+
+| Tool | Purpose | Required |
+|------|---------|----------|
+| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | AI coding assistant | Yes |
+| [Git](https://git-scm.com/) | Version control | Yes |
+| [GNU Stow](https://www.gnu.org/software/stow/) | Symlink manager | Yes |
+| [GitHub CLI (`gh`)](https://cli.github.com/) | GitHub operations | For ship commands |
+| Bun or Node.js | JS/TS runtime | For JS/TS projects |
+
+## Install
+
+<Steps>
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/mayknxyz/my-kit.git ~/.my-kit
+   ```
+
+2. **Stow the kit into your home directory:**
+
+   ```bash
+   cd ~/.my-kit && stow -t ~ .
+   ```
+
+   This creates symlinks so Claude Code can discover my-kit's commands and skills globally.
+
+3. **Verify the installation:**
+
+   ```bash
+   ls -la ~/.claude/commands/mykit.*.md
+   ```
+
+   You should see symlinks for all 29 commands.
+
+</Steps>
+
+## Initialize a Project
+
+Run `init` inside any project to set up my-kit's project-level configuration:
+
+```bash
+cd your-project
+/mykit.init
+```
+
+This creates project-specific settings and ensures Claude Code picks up my-kit's skills for your stack.
+
+## Upgrade
+
+Pull the latest changes and re-stow:
+
+```bash
+cd ~/.my-kit && git pull && stow -t ~ .
+```
+
+## Uninstall
+
+Remove the symlinks and delete the clone:
+
+```bash
+cd ~/.my-kit && stow -D -t ~ . && cd ~ && rm -rf ~/.my-kit
+```
+
+<Aside type="caution">
+  Uninstalling removes all my-kit commands and skills from Claude Code. Project-level configs (like `.claude/` settings) are not affected.
+</Aside>
+
+## Troubleshooting
+
+- **Stow conflicts** — If `stow` reports conflicts, another file may exist at the symlink target. See [Installation Issues](/troubleshooting/installation-issues/).
+- **Commands not found** — Ensure Claude Code is restarted after installing. Run `/mykit.status` to verify.
+- **Permission errors** — Make sure `~/.my-kit` is owned by your user, not root.
