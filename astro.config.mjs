@@ -8,6 +8,11 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'my-kit',
+			favicon: '/favicon.png',
+			logo: {
+				src: './src/assets/my-backpack-logo.png',
+			},
+			customCss: ['./src/styles/custom.css'],
 			components: {
 				SocialIcons: './src/components/SocialIcons.astro',
 			},
